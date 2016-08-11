@@ -13,8 +13,8 @@
 			$temp = explode(".", $_FILES['images']['name'][$key]);
 			$newfilename = round(microtime(true)) . '.' . end($temp);
 			for ($i = 0; $i < count($_FILES['images']['name'][$key]); $i++) {
-				move_uploaded_file($_FILES['images']['tmp_name'][$key],$target_file);
-				$images_arr[] = $target_file;
+				move_uploaded_file($_FILES['images']['tmp_name'][$key],$target_dir.$newfilename);
+				$images_arr[] = $target_dir.$newfilename;
 			}
         }
     }
